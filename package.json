@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "life-manager",
   "private": true,
   "scripts": {
     "build": "turbo run build",
