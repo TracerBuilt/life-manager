@@ -26,6 +26,7 @@
             pkg-config
             gobject-introspection
             nodejs
+            pnpm
           ];
           buildInputs = with pkgs; [
             clang
