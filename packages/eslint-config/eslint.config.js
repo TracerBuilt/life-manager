@@ -1,8 +1,8 @@
-import prettier from 'eslint-config-prettier';
 import js from '@eslint/js';
+import prettier from 'eslint-config-prettier';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
-import turboPlugin from 'eslint-plugin-turbo';
 import svelte from 'eslint-plugin-svelte';
+import turboPlugin from 'eslint-plugin-turbo';
 import globals from 'globals';
 import ts from 'typescript-eslint';
 

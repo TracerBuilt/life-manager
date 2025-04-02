@@ -32,6 +32,7 @@
             clang
             llvmPackages.bintools
             rustup
+            rust-analyzer
 
             # Tauri dependencies
             at-spi2-atk

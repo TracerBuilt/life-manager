@@ -1,36 +1,31 @@
 <script lang="ts">
+	import '../app.css';
+
 	import { Button } from 'bits-ui';
 	import type { Snippet } from 'svelte';
 
-	const {
+	let {
 		children,
+		href,
 		class: class_name = '',
-		primary = false,
-		size = 'medium',
-		background_color = 'blue-600',
-		onclick,
 		...attributes
 	}: {
 		children: Snippet;
+		href?: string;
 		class?: string;
-		primary?: boolean;
-		size?: 'small' | 'medium' | 'large';
-		background_color?: string;
-		label: string;
-		onclick?: () => void;
 	} = $props();
 </script>
 
-<Button.Root
-	class="rounded-md px-4 py-2 font-medium shadow-sm transition-all
-		{primary
-		? `bg-${background_color} text-white hover:bg-${background_color}`
-		: 'bg-neutral-200 text-neutral-800 hover:bg-neutral-300'}
-		{size === 'small' ? 'text-sm' : size === 'large' ? 'px-6 py-3 text-lg' : 'text-base'}
-		{background_color}
-		{class_name}"
-	{onclick}
-	{...attributes}
->
-	{@render children()}
-</Button.Root>
+<Button.Root {href} class="button {class_name}" {...attributes}>{@render children()}</Button.Root>
+
+<style>
+	.button {
+		@apply border border-black bg-white text-black shadow-sm transition duration-300 ease-in-out;
+	}
+	.button :hover {
+		@apply bg-gray-800 text-white;
+	}
+	.button :active {
+		@apply bg-black text-white shadow-none;
+	}
+</style>
